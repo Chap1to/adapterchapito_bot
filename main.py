@@ -1,14 +1,16 @@
 import asyncio
 import logging
+import os
+from dotenv import load_dotenv
 
 from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 
-# Импортируем наш роутер из файла handlers.py
 from handlers import router
 
-TOKEN = "8712827832:AAFRGUCcZBuOGBpw1BQC6tYnES7BTB5b85I"
+load_dotenv()
+TOKEN = os.getenv("BOT_TOKEN")
 
 bot = Bot(
     token=TOKEN,
